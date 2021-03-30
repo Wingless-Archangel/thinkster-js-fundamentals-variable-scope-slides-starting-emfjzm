@@ -31,4 +31,22 @@ function courseInfo() {
   }
 }
 courseInfo();
-console.log(courseName); // error due to the variable is within the function scope
+// console.log(courseName); // error due to the variable is within the function scope
+
+// Block scope
+// this will different with function scope variable since function scope has hoisting
+function watchCourse() {
+  const courseName = "JavaScript Fundamentals";
+  // console.log(started); this will be error since block scope var didn't have hoisting
+  let started = false;
+
+  if (started) {
+    let progress = 50;
+    console.log(`I am ${progress} percent done with ${courseName}`);
+  } else {
+    let progress = 0;
+    console.log(`I am ${progress} percent done with ${courseName}`);
+  }
+  // console.log(progress); // this will be an error since it use outside of the block scope of if-else
+}
+watchCourse();
