@@ -20,3 +20,15 @@ function sayGoodbye(name) {
   console.log(`Goodbye ${name}`);
 }
 sayGoodbye("Joe Eames");
+
+function courseInfo() {
+  var courseName = "JavaScript Fundamentals";
+  console.log(courseName);
+
+  function output() {
+    // this is ok since it allows nested function to access the variable
+    console.log(courseName);
+  }
+}
+courseInfo();
+console.log(courseName); // error due to the variable is within the function scope
